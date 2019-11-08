@@ -1,22 +1,34 @@
-import React from "react";
+
+
+import React from 'react';
+import {
+  Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, Button
+} from 'reactstrap';
+import styled from 'styled-components'
+
+const CardContainer = styled.div`
+max-width: 800px;
+background-color: blue;
+margin: 0 auto;
+`
+
+
 
 const NasaGrid = (props) => {
-    return (
-    <>
-        <div>
-          <h1>{props.date}</h1>
-        </div>
+  return (
+    <CardContainer>
+      <Card>
+        <CardImg top width="100%" src={props.url} alt="rendom daily photo" />
+        <CardBody>
+          <CardTitle>{props.date}</CardTitle>
+          <CardSubtitle>{props.title}</CardSubtitle>
+          <CardText>{props.explanation}</CardText>
+        </CardBody>
+      </Card>
+    </CardContainer>
 
-        <div>
-          <img src = {props.url} alt="rendom daily photo"/>
-        </div>
-
-        <div>
-          <h2>{props.title}</h2>
-          <p>{props.explanation}</p>
-        </div>
-
-    </>
-  )
+  );
 };
+
 export default NasaGrid;
